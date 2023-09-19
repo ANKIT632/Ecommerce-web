@@ -5,7 +5,7 @@ import { GiReceiveMoney } from "react-icons/gi";
 import { RiSecurePaymentLine } from "react-icons/ri";
 
 const Services = () => {
-  return (
+  return ( 
     <Wrapper>
       <div className="container">
         <div className="grid grid-three-column">

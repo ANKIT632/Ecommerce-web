@@ -1,6 +1,7 @@
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "../styles/Button";
+
 
 const HeroSection = ({ myData }) => {
   const { name } = myData;
