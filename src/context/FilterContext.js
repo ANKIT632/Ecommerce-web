@@ -2,6 +2,7 @@ import { createContext, useContext, useReducer, useEffect } from "react";
 import { useProductContext } from "./productcontext";
 import reducer from "../reducer/FilterReducer";
 
+
 const FilterContext = createContext();
 
 const initialState = {

@@ -1,23 +1,36 @@
 import styled from "styled-components";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Contact = () => {
+  const { isAuthenticated, user } = useAuth0();
   const Wrapper = styled.section`
     padding: 9rem 0 5rem 0;
     text-align: center;
 
+  .common-heading{
+    margin-bottom: 4rem;
+    text-transform: capitalize;
+    margin-top: -47px;
+  }
     .container {
-      margin-top: 6rem;
+      padding: 2rem 0 4rem 0;
       background:2px;
-        
+      width: 52rem;
+      padding: 4rem;
+      background-color: #eadfd6;
+      box-shadow: 4px 4px 25px gray;
+    border-radius: 24px;
+
       .contact-form {
         max-width: 50rem;
-        margin: auto;
+        margin-top: 54px;
         
 
         .contact-inputs {
           display: flex;
           flex-direction: column;
           gap: 3rem;
+          margin-top: -47px;
 
           input[type="submit"] {
             cursor: pointer;
@@ -39,7 +52,7 @@ const Contact = () => {
     // name attribute show when send in email .
     // autocomplete use after submit data is not show.
     <Wrapper>
-      <h2 className="common-heading">Contact page</h2>
+      <h2 className="common-heading">Contact Us</h2>
       <div className="container">
         <div className="contact-form">
           <form
@@ -48,6 +61,7 @@ const Contact = () => {
             className="contact-inputs">
             <input
               type="text"
+              value={isAuthenticated ? user.name :" "}
               placeholder="username"
               name="username"
               required
@@ -57,6 +71,7 @@ const Contact = () => {
             <input
               type="email"
               name="Email"
+              value={isAuthenticated?user.email:""}
               placeholder="Email"
               autoComplete="off"
               required

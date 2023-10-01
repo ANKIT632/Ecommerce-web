@@ -1,11 +1,12 @@
 // import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "../styles/Button";
+import { useNavigate } from "react-router-dom";
 
 
 const HeroSection = ({ myData }) => {
   const { name } = myData;
-
+   const navigate=useNavigate()
   return (
     <Wrapper>
       <div className="container">
@@ -19,7 +20,7 @@ const HeroSection = ({ myData }) => {
               animi! Suscipit sapiente.
             </p>
             {/* <NavLink > */}
-              <Button>show now</Button>
+              <Button onClick={()=>navigate('./products')}>shop now</Button>
             {/* </NavLink> */}
           </div>
           {/* our homepage image  */}

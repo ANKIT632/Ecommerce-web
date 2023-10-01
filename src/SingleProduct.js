@@ -14,18 +14,19 @@ import AddToCart from "./components/AddToCart";
 const API = "https://api.pujakaitem.com/api/products";
 
 const SingleProduct = () => {
-  const { getSingleProduct, isSingleLoading, singleProduct } =
+  const { getSingleProduct, isSingleLoading, singleProduct} =
     useProductContext();
 
   const { id } = useParams();
 
   const {
+ 
     id: alias,
     name,
     company,
     price,
     description,
-    category,
+ 
     stock,
     stars,
     reviews,
@@ -78,7 +79,7 @@ const SingleProduct = () => {
 
               <div className="product-warranty-data">
                 <TbTruckDelivery className="warranty-icon" />
-                <p>React Delivered Always Faster</p>
+                <p>Thapa Delivered </p>
               </div>
 
               <div className="product-warranty-data">

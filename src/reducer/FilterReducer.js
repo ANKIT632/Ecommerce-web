@@ -1,4 +1,4 @@
-const filterReducer = (state, action) => {
+const FilterReducer = (state, action) => {
   switch (action.type) {
     case "LOAD_FILTER_PRODUCTS":
       let priceArr = action.payload.map((curElem) => curElem.price);
@@ -7,9 +7,23 @@ const filterReducer = (state, action) => {
         priceArr
       );
 
+      // 1way
+      // console.log(Math.max.apply(null, priceArr));
 
+      // let maxPrice = priceArr.reduce(
+      //   (initialVal, curVal) => Math.max(initialVal, curVal),
+      //   0
+      // );
+      // console.log(
+      //   "🚀 ~ file: filterReducer.js ~ line 16 ~ filterReducer ~ maxPrice",
+      //   maxPrice
+      // );
 
       let maxPrice = Math.max(...priceArr);
+      console.log(
+        "🚀 ~ file: filterReducer.js ~ line 23 ~ filterReducer ~ maxPrice",
+        maxPrice
+      );
 
       return {
         ...state,
@@ -110,15 +124,39 @@ const filterReducer = (state, action) => {
           curElem.colors.includes(color)
         );
       }
-      
+
+      if (price === 0) {
+        tempFilterProduct = tempFilterProduct.filter(
+          (curElem) => curElem.price === price
+        );
+      } else {
+        tempFilterProduct = tempFilterProduct.filter(
+          (curElem) => curElem.price <= price
+        );
+      }
       return {
         ...state,
         filter_products: tempFilterProduct,
       };
 
+    case "CLEAR_FILTERS":
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          text: "",
+          category: "all",
+          company: "all",
+          color: "all",
+          maxPrice: 0,
+          price: state.filters.maxPrice,
+          minPrice: state.filters.maxPrice,
+        },
+      };
+
     default:
-      return [...state];
+      return state;
   }
 };
 
-export default filterReducer;
+export default FilterReducer;
