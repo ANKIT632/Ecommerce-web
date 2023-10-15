@@ -5,13 +5,13 @@ import styled from "styled-components";
 const PageNavigation = ({ title }) => {
   return (
     <Wrapper>
-      <NavLink to="/">Home</NavLink>/{title}
+      <NavLink to="/products">Shop Now</NavLink>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.section`
-  height: 10rem;
+  height: 4rem;
   background-color: ${({ theme }) => theme.colors.bg};
   display: flex;
   justify-content: flex-start;

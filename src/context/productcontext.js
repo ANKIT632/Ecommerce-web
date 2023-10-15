@@ -34,12 +34,20 @@ const AppProvider = ({ children }) => {
   const getSingleProduct = async (url) => {
     dispatch({ type: "SET_SINGLE_LOADING" });
     try {
-      const res = await axios.get(url);
-      const singleProduct = await res.data;
+      const response = await fetch(url);
+  
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+  
+      const singleProduct = await response.json();
       dispatch({ type: "SET_SINGLE_PRODUCT", payload: singleProduct });
+      console.log(singleProduct);
     } catch (error) {
-      dispatch({ type: "SET_SINGLE_ERROR" });
+      console.error('Error:', error);
     }
+
+  
   };
 
   useEffect(() => {

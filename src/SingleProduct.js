@@ -14,19 +14,16 @@ import AddToCart from "./components/AddToCart";
 const API = "https://api.pujakaitem.com/api/products";
 
 const SingleProduct = () => {
-  const { getSingleProduct, isSingleLoading, singleProduct} =
+  const { getSingleProduct, isSingleLoading, singleProduct } =
     useProductContext();
 
   const { id } = useParams();
 
   const {
- 
-    id: alias,
     name,
     company,
     price,
     description,
- 
     stock,
     stars,
     reviews,
@@ -35,6 +32,7 @@ const SingleProduct = () => {
 
   useEffect(() => {
     getSingleProduct(`${API}?id=${id}`);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (isSingleLoading) {
@@ -74,12 +72,12 @@ const SingleProduct = () => {
 
               <div className="product-warranty-data">
                 <TbReplace className="warranty-icon" />
-                <p>30 Days Replacement</p>
+                <p>7 Days Replacement</p>
               </div>
 
               <div className="product-warranty-data">
                 <TbTruckDelivery className="warranty-icon" />
-                <p>Thapa Delivered </p>
+                <p>React Delivered </p>
               </div>
 
               <div className="product-warranty-data">
