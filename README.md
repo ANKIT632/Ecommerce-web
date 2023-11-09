@@ -1,4 +1,4 @@
-- Ecommerce web project
+- Ecommerce React web project
 
 
 
