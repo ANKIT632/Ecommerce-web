@@ -65,6 +65,7 @@ const Footer = () => {
           <div className="footer-bottom--section">
             <hr />
             <div className="container grid grid-two-column ">
+              <p>Develop by : Ankit Gupta</p>
               <p>
                 @{new Date().getFullYear()} React store. All Rights Reserved
               </p>

@@ -6,8 +6,9 @@ import Nav from "./Nav";
 const Header = () => {
   return (
     <MainHeader>
-      <NavLink to="/">
+      <NavLink to="/" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
         <img src="./images/logo.png" alt="my logo img" style={ {height: '55px'}} />
+        <p>AG</p>
       </NavLink>
       <Nav />
     </MainHeader>
